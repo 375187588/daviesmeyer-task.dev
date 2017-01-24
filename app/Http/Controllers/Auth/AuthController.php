@@ -41,6 +41,6 @@ class AuthController extends Controller
 
         request()->session()->flash('message', 'Goodbye!');
 
-        return redirect()->route('auth.logout');
+        return redirect()->route('auth.login');
     }
 }
