@@ -1,7 +1,7 @@
 @extends('layouts.home')
 @section('content')
 
-<div class="col-lg-5">
+<div class="col-lg-4">
     <fieldset>
         <legend>{{ trans('home.contact') }}</legend>
         {!! Form::open(['route' => ['home.mail']]) !!}
@@ -63,8 +63,8 @@
 </div>
 <style>
     #map {
-        height: 400px;
-        width: 55%;
+        height: 300px;
+        width: 60%;
     }
 </style>
 <script>
@@ -84,6 +84,6 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUBWceHhpEzAlmKNfpv1-gmYCf6-cDAdo&callback=initMap">
 </script>
 
-<div class="col-lg-7" id="map"></div>
+<div class="col-lg-7 pull-right" id="map"></div>
 
 @stop
