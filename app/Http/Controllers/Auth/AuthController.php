@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
-use Validator;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginRequest;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
@@ -32,8 +31,6 @@ class AuthController extends Controller
 
     /**
      * Create a new authentication controller instance.
-     *
-     * @return void
      */
     public function __construct()
     {
@@ -41,32 +38,36 @@ class AuthController extends Controller
     }
 
     /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
+     * @param LoginRequest $request
+     * @return \Illuminate\Http\RedirectResponse
      */
-    protected function validator(array $data)
+    public function login(LoginRequest $request)
     {
-        return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
-        ]);
+        $userdata = array(
+            'email'     => $request->get('email'),
+            'password'  => $request->get('password')
+        );
+
+        if (Auth::attempt($userdata) && Auth::user()->hasRole('admin')) {
+            request()->session()->flash('message', 'Welcome Admin!');
+
+            return redirect()->route('admin');
+        }
+
+        request()->session()->flash('message', 'There is no user with sent credentials!');
+
+        return redirect()->route('auth.login');
     }
 
     /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return User
+     * @return \Illuminate\Http\RedirectResponse
      */
-    protected function create(array $data)
+    public function logout()
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
+        Auth::logout();
+
+        request()->session()->flash('message', 'Goodbye!');
+
+        return redirect()->route('auth.index');
     }
 }

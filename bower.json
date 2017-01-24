@@ -1,0 +1,22 @@
+{
+  "name": "daviesmeyer-task.dev",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Dragan Miljanovic <wooolf@sbb.rs>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/dmiljanovic/daviesmeyer-task.dev",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
