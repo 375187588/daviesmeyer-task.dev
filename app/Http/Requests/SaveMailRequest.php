@@ -22,9 +22,10 @@ class SaveMailRequest extends Request
     public function rules()
     {
         return [
-            'name'       => 'required',
-            'email'      => 'required|email',
-            'message'    => 'required|min:10',
+            'name'                  => 'required',
+            'email'                 => 'required|email',
+            'message'               => 'required|min:10',
+            'g-recaptcha-response'  => 'required|captcha'
             ];
     }
 }

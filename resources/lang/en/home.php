@@ -21,5 +21,6 @@ return [
     'message' => 'Message',
     'error' => 'There was an error saving mail. Please try again.',
     'saved' => 'Mail successfully saved.',
+    'captcha' => 'Captcha'
 
 ];
