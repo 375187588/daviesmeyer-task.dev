@@ -1,7 +1,7 @@
 @extends('layouts.home')
 @section('content')
 
-<div class="col-lg-4">
+<div class="col-lg-5">
     <fieldset>
         <legend>{{ trans('home.contact') }}</legend>
         {!! Form::open(['route' => ['home.mail']]) !!}
@@ -61,5 +61,29 @@
         {!! Form::close() !!}
     </fieldset>
 </div>
+<style>
+    #map {
+        height: 400px;
+        width: 55%;
+    }
+</style>
+<script>
+    function initMap() {
+        var uluru = {lat: 53.998336, lng: 10.780070};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 12,
+            center: uluru
+        });
+        var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+        });
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUBWceHhpEzAlmKNfpv1-gmYCf6-cDAdo&callback=initMap">
+</script>
+
+<div class="col-lg-7" id="map"></div>
 
 @stop
