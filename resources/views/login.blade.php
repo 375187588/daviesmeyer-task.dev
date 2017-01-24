@@ -6,7 +6,7 @@
         <fieldset>
 
             <legend>Login</legend>
-            {!! Form::open(['route' => ['auth.login'], 'name' => 'form', 'id' => 'sign-in-form']) !!}
+            {!! Form::open(['route' => ['auth.login']]) !!}
 
             <div class="form-group">
                 {!! Form::label('email', trans('login.email')) !!}
