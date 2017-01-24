@@ -13,6 +13,8 @@
 
 Route::get('/', 'Home\HomeController@index')->name('home.index');
 
+Route::post('/', 'Home\HomeController@mail')->name('home.mail');
+
 Route::get('/login', 'Admin\AdminController@login')->name('admin.login');
 
 Route::post('/login', 'Auth\AuthController@login')->name('auth.login');
