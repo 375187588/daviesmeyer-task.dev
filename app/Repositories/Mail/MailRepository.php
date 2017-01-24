@@ -26,6 +26,40 @@ class MailRepository
         $mail->message  = $params['message'];
 
         $mail->save();
-
     }
+
+    /**
+     * Get all mails from db.
+     *
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public function getAllMails()
+    {
+        return MailModel::all();
+    }
+
+    /**
+     * Get mail by id from db.
+     *
+     * @param $id
+     *
+     * @return \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Eloquent\ModelNotFoundException
+     */
+    public function getMailById($id)
+    {
+        return MailModel::findOrFail($id);
+    }
+
+    /**
+     * Delete mail from db.
+     *
+     * @param $id
+     */
+    public function deleteMail($id)
+    {
+        $mail = MailModel::findOrFail($id);
+
+        $mail->delete();
+    }
+
 }

@@ -1,5 +1,19 @@
 <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 header">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 header">
+        <ul class="nav navbar-nav">
+            <li><a href="{{ route('admin') }}">Dashboard</a></li>
+            <li class="dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                   aria-haspopup="true" aria-expanded="false"><i
+                        class="fa fa-building"></i>Mail<span
+                        class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="{{ route('admin.mails') }}"><i class="fa fa-mail"></i>All Mails</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 header">
         <ul class="nav navbar-nav navbar-right">
             <li><a href="{{ URL::to(route('auth.logout')) }}">Admin Logout</a></li>
         </ul>
