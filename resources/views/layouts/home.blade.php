@@ -22,7 +22,7 @@
 <div class="container">
 
     @if(Session::has('message'))
-    <div style="position: fixed; top: 10%; right: 1%" class="alert alert-info">
+    <div style="position: fixed; top: 10%; right: 1%; z-index: 1500" class="alert alert-info">
         <a class="close" data-dismiss="alert">×</a>
         {!! Session::get('message') !!}
     </div>
