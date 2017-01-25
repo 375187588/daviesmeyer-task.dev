@@ -100,7 +100,7 @@ class UserRepository
 
         $user->email = $params['email'];
 
-        if (isset($params['password'])) {
+        if (!empty($params['password'])) {
             $user->password = Hash::make($params['password']);
         }
 
