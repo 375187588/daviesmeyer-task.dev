@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Mail;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Repositories\Mail\MailRepository;
 use Illuminate\Support\Facades\Log;
 
@@ -88,6 +89,28 @@ class MailController extends Controller
         request()->session()->flash('message', 'Record successfully deleted!');
 
         return redirect()->route('admin.mails');
+    }
+
+    /**
+     * Method for getting books by search term.
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function search(Request $request)
+    {
+        $params = $request->all();
+
+        $result = $this->mailHandle->searchMails($params['term']);
+
+        if ($result->isEmpty())
+        {
+            request()->session()->flash('message', 'There is no search result for the requested term.');
+
+            return redirect()->route('admin.mails');
+        }
+
+        return view('admin.mails')->with('mails', $result);
     }
 
 }

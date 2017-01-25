@@ -1,10 +1,8 @@
 @extends('layouts.admin')
 @section('content')
 
-<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-lg-offset-1">
-    <div class="page-header">
-        <h3>Mail</h3>
-    </div>
+<div class="col-lg-10 col-lg-offset-1">
+    <h3>Mail</h3>
     <div class="bs-component">
         <div>
             <table class="table table-striped table-hover">

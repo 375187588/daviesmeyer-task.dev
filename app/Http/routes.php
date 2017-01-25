@@ -34,6 +34,5 @@ Route::group([
     Route::get('/mails', 'Mail\MailController@index')->name('admin.mails');
     Route::get('/mail/{id}', 'Mail\MailController@show')->name('admin.mail');
     Route::get('/mail/delete/{id}', 'Mail\MailController@delete')->name('admin.mail.delete');
-    Route::get('/profile/{id}', 'User\UserController@getProfile')->name('admin.getprofile');
-    Route::post('/profile', 'User\UserController@profile')->name('admin.profile');
+    Route::post('/search', 'Mail\MailController@search')->name('admin.mail.search');
 });

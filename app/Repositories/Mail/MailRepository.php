@@ -62,4 +62,17 @@ class MailRepository
         $mail->delete();
     }
 
+    /**
+     * Method for getting mails from bd by search term.
+     *
+     * @param $term
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function searchMails($term)
+    {
+        return MailModel::where('name', 'LIKE', '%'.$term.'%')
+            ->orWhere('email', 'LIKE', '%'.$term.'%')
+            ->get();
+    }
+
 }

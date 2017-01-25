@@ -1,17 +1,20 @@
 @extends('layouts.admin')
 @section('content')
 
-<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-lg-offset-1">
+<div class="col-lg-10 col-lg-offset-1">
     <div class="page-header">
         <h3>Mails</h3>
     </div>
     <div class="bs-component">
-        <form class="form-inline">
-            <div class="form-group">
-                <label>Search</label>
-                <input type="text" ng-model="search" class="form-control" placeholder="Search">
-            </div>
-        </form>
+        {!! Form::open(['route' => ['admin.mail.search'], 'class' => 'form-inline']) !!}
+
+        <div class="form-group">
+            {!! Form::label('Search', null) !!}
+            {!! Form::text('term', '', ['class' => 'form-control']) !!}
+        </div>
+
+
+        {!! Form::close() !!}
         <div>
             <table class="table table-striped table-hover">
                 <thead>
