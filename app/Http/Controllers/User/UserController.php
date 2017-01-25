@@ -5,9 +5,8 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RequestResetPasswordRequest;
 use App\Http\Requests\ResetPasswordRequest;
-use App\Repositories\Company\CompanyRepository;
+use App\Http\Requests\UpdateProfileRequest;
 use App\Repositories\User\UserRepository;
-use App\Repositories\UserRole\UserRoleRepository;
 use App\UtilityHelpers\UtilityHelpers;
 use Illuminate\Support\Facades\Log;
 
@@ -107,25 +106,50 @@ class UserController extends Controller
         try
         {
             $this->userHandler->resetPassword($user, $params);
-            request()->session()->flash('message', trans('passwords.reset'));
-
-            return redirect()->route('index');
         } catch  (\Exception $e) {
-            Log::error('Error while sending reset password mail: ', ['message' => $e->getMessage()]);
+            Log::error('Error while reseting password: ', ['message' => $e->getMessage()]);
             request()->session()->flash('message', trans('passwords.error'));
 
             return redirect()->route('password-recover', ['secret_token' => $params['secret_token']]);
         }
+        request()->session()->flash('message', trans('passwords.reset'));
+
+        return redirect()->route('auth.login');
     }
 
     /**
      * @param $id
      * @return $this
      */
-    public function getProfile($id)
+    public function profile($id)
     {
         $user = $this->userHandler->getUserById($id);
 
         return view('admin.profile')->with('user', $user);
     }
+
+    /**
+     * @param UpdateProfileRequest $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function updateProfile(UpdateProfileRequest $request, $id)
+    {
+        $params = $request->all();
+
+        try
+        {
+            $this->userHandler->updateUser($id, $params);
+        } catch  (\Exception $e) {
+            Log::error('Error while updating user record: ', ['message' => $e->getMessage()]);
+            request()->session()->flash('message', trans('user.error'));
+
+            return redirect()->route('admin.profile', $id);
+        }
+        request()->session()->flash('message', trans('user.success'));
+
+        return redirect()->route('auth.logout');
+    }
+
+
 }

@@ -15,7 +15,8 @@
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 header">
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="{{ URL::to(route('auth.logout')) }}">Admin Logout</a></li>
+            <li><a href="{{ URL::to( route('admin.profile', Auth::user()->id)) }}">Profile</a></li>
+            <li><a href="{{ URL::to(route('auth.logout')) }}">Logout</a></li>
         </ul>
     </div>
 </div>

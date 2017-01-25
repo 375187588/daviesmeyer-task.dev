@@ -81,10 +81,30 @@ class UserRepository
      */
     public function resetPassword($user, $params)
     {
+        $user = UserModel::find($user->id);
         $user->password = Hash::make($params['password']);
         $user->token = null;
 
-        return $user->save();
+        $user->save();
+    }
+
+    /**
+     * Method for updating user data in db.
+     *
+     * @param $id
+     * @param $params array
+     */
+    public function updateUser($id, $params)
+    {
+        $user = UserModel::find($id);
+
+        $user->email = $params['email'];
+
+        if (isset($params['password'])) {
+            $user->password = Hash::make($params['password']);
+        }
+
+        $user->save();
     }
 
 }

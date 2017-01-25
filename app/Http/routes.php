@@ -35,4 +35,6 @@ Route::group([
     Route::get('/mail/{id}', 'Mail\MailController@show')->name('admin.mail');
     Route::get('/mail/delete/{id}', 'Mail\MailController@delete')->name('admin.mail.delete');
     Route::post('/search', 'Mail\MailController@search')->name('admin.mail.search');
+    Route::get('/profile/{id}', 'User\UserController@profile')->name('admin.profile');
+    Route::post('/profile-update/{id}', 'User\UserController@updateProfile')->name('admin.profile.update');
 });
