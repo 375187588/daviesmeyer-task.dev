@@ -3,8 +3,8 @@ echo "Pokrecem nephodno pre commit-a"
 echo "========================================================================="
 echo "MySQL drop db, create db"
 echo "========================================================================="
-mysqladmin -uroot -proot drop wing
-mysqladmin -uroot -proot create wing
+mysqladmin -uroot -proot drop daviesmeyer
+mysqladmin -uroot -proot create daviesmeyer
 echo "==================== Composer dump autoload===================="
 composer dump-autoload
 echo "==================== Artisan migrate:reset===================="
