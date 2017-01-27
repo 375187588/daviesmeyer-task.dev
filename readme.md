@@ -1,27 +1,27 @@
-# Laravel PHP Framework
+# Install
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+* Clone repo
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+* From your console 'composer install' to install dependencies.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+* At your project root, rename '.env.example' file to '.env'
 
-## Official Documentation
+    * Set DB_DATABASE=daviesmeyer
+        * DB_USERNAME=root
+        * DB_PASSWORD=root
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+        * NOCAPTCHA_SECRET=6LdR_xIUAAAAAB0YI4bUvujvoLF69awaF7WbcUqy
+        * NOCAPTCHA_SITEKEY=6LdR_xIUAAAAANTuNZlHiNVUJ2hjTnvsnvf14Se1
 
-## Contributing
+        * GOOGLE_API_KEY=AIzaSyCknIeCExEnnD78mH7dj2Ccczb3270mppE
+    * From your console 'php artisan key:generate' to generate and set APP_KEY
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+* From your console 'sh checkall.sh' to start migrations and seeders
 
-## Security Vulnerabilities
+* To enter front of the app daviesmeyer-task.dev
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+* To enter backend of the app daviesmeyer-task.dev/login
 
-## License
+    * user: admin@user.com
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+    * pass: admin
