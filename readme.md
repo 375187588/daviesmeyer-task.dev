@@ -7,14 +7,13 @@
 * At your project root, rename '.env.example' file to '.env'
 
     * Set DB_DATABASE=daviesmeyer
-        * DB_USERNAME=root
-        * DB_PASSWORD=root
+    * DB_USERNAME=root
+    * DB_PASSWORD=root
+    * NOCAPTCHA_SECRET=6LdR_xIUAAAAAB0YI4bUvujvoLF69awaF7WbcUqy
+    * NOCAPTCHA_SITEKEY=6LdR_xIUAAAAANTuNZlHiNVUJ2hjTnvsnvf14Se1
+    * GOOGLE_API_KEY=AIzaSyCknIeCExEnnD78mH7dj2Ccczb3270mppE
 
-        * NOCAPTCHA_SECRET=6LdR_xIUAAAAAB0YI4bUvujvoLF69awaF7WbcUqy
-        * NOCAPTCHA_SITEKEY=6LdR_xIUAAAAANTuNZlHiNVUJ2hjTnvsnvf14Se1
-
-        * GOOGLE_API_KEY=AIzaSyCknIeCExEnnD78mH7dj2Ccczb3270mppE
-    * From your console 'php artisan key:generate' to generate and set APP_KEY
+* From your console 'php artisan key:generate' to generate and set APP_KEY
 
 * From your console 'sh checkall.sh' to start migrations and seeders
 
