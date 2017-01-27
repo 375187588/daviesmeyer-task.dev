@@ -4,9 +4,9 @@
 
 * From your console 'composer install' to install dependencies.
 
-* At your project root, rename '.env.example' file to '.env'
+* At your project root, rename '.env.example' file to '.env' and set:
 
-    * Set DB_DATABASE=daviesmeyer
+    * DB_DATABASE=daviesmeyer
     * DB_USERNAME=root
     * DB_PASSWORD=root
     * NOCAPTCHA_SECRET=6LdR_xIUAAAAAB0YI4bUvujvoLF69awaF7WbcUqy
