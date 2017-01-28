@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SaveMailRequest;
 use App\Repositories\Mail\MailRepository;
+use Cornford\Googlmapper\Facades\MapperFacade as Mapper;
 use Illuminate\Support\Facades\Log;
 
 /**
@@ -28,11 +29,20 @@ class HomeController extends Controller
         $this->mailHandler = new $mailRepository;
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
+        Mapper::map(53.997852, 10.781322,['zoom' => 18, 'type' => 'SATELLITE', 'marker' => false]);
+
         return view('index');
     }
 
+    /**
+     * @param SaveMailRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function mail(SaveMailRequest $request)
     {
         $params = $request->all();

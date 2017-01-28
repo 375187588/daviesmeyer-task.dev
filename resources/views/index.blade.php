@@ -61,29 +61,9 @@
         {!! Form::close() !!}
     </fieldset>
 </div>
-<style>
-    #map {
-        height: 300px;
-        width: 65%;
-    }
-</style>
-<script>
-    function initMap() {
-        var uluru = {lat: 53.998336, lng: 10.780070};
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 12,
-            center: uluru
-        });
-        var marker = new google.maps.Marker({
-            position: uluru,
-            map: map
-        });
-    }
-</script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUBWceHhpEzAlmKNfpv1-gmYCf6-cDAdo&callback=initMap">
-</script>
 
-<div class="col-lg-7" id="map"></div>
+<div class="col-lg-8" style="height: 400px;">
+    {!! Mapper::render() !!}
+</div>
 
 @stop

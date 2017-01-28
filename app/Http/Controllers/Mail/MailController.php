@@ -18,7 +18,7 @@ class MailController extends Controller
      */
     protected $mailHandle;
 
-    /**
+    /*
      * CompanyController constructor.
      *
      * @param MailRepository $mail
@@ -29,8 +29,6 @@ class MailController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
-     *
      * @return $this|\Illuminate\Http\RedirectResponse
      */
     public function index()
@@ -49,8 +47,6 @@ class MailController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
      * @param $id
      * @return $this|\Illuminate\Http\RedirectResponse
      */
@@ -70,8 +66,6 @@ class MailController extends Controller
     }
 
     /**
-     * Delete the specified resource.
-     *
      * @param $id
      * @return \Illuminate\Http\RedirectResponse
      */
@@ -92,8 +86,6 @@ class MailController extends Controller
     }
 
     /**
-     * Method for getting books by search term.
-     *
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
