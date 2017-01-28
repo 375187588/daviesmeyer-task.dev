@@ -30,6 +30,6 @@
 
 * To enter backend of the app daviesmeyer-task.dev/login
 
-    * user: admin@user.com
+    * user: admin@admin.com
 
     * pass: admin
