@@ -2,7 +2,7 @@
 
 * Clone repo
 
-* From your console 'composer install' to install dependencies.
+* From your console at your root folder execute 'composer install' to install dependencies.
 
 * At your project root, rename '.env.example' file to '.env' and set:
 
@@ -22,9 +22,9 @@
    * MAIL_PASSWORD=password
    * MAIL_ENCRYPTION=ssl
 
-* From your console 'php artisan key:generate' to generate and set APP_KEY
+* From your console at your root folder execute 'php artisan key:generate' to generate and set APP_KEY
 
-* From your console 'sh checkall.sh' to start migrations and seeders
+* From your console at your root folder execute 'sh checkall.sh' to start migrations and seeders
 
 * To enter front of the app daviesmeyer-task.dev
 
