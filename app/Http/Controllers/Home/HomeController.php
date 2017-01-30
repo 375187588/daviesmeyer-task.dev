@@ -34,7 +34,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        Mapper::map(53.997852, 10.781322,['zoom' => 18, 'type' => 'SATELLITE', 'marker' => false]);
+        Mapper::map(53.997884, 10.781367,['zoom' => 12, 'marker' => false]);
 
         return view('index');
     }
