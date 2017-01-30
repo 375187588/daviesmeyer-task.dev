@@ -18,7 +18,7 @@
    * MAIL_DRIVER=smtp
    * MAIL_HOST=smtp.gmail.com
    * MAIL_PORT=465
-   * MAIL_USERNAME=usernam@gmail.com
+   * MAIL_USERNAME=username@gmail.com
    * MAIL_PASSWORD=password
    * MAIL_ENCRYPTION=ssl
 
