@@ -2,9 +2,7 @@
 
 * This mini project is a response to the task.
 
-* For the task, Laravel (PHP) was used on beckend, a bootstrap library was used as a frontend framework. The application has a front end available to all site visitors, and a backend available only to administrators. Frontend consists of one page on the contact form and Google Maps.
-
-Contact form is protected by Captcha anti-spam mechanism.
+* For the task, Laravel (PHP) was used on beckend, a bootstrap library was used as a frontend framework. The application has a front end available to all site visitors, and a backend available only to administrators. Frontend consists of one page on the contact form and Google Maps. Contact form is protected by Captcha anti-spam mechanism.
 
 * The form has validation and after successful validation, the data from the contact form is stored in the database, the message is sent to the mail service, and the message about the successful sending of the query is displayed.
 
